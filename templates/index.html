@@ -1,27 +1,369 @@
-{% extends "layout.html" %}
-{% block content %}
+<!DOCTYPE html>
+<html lang="en">
 
-<div align='center'>
-  <img src="{{ url_for('static',filename='img/cartel2.jpg') }}" align='center'/>
-</div>
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <meta name="description" content=""/>
+    <meta name="author" content=""/>
 
-<h1 class="nav-link">Confirmar Asistencia</h1>
-<form action="" method="post">
-    {{ form.hidden_tag() }}
-    <p>
-        {{ form.username.label(class_="label-weeding") }}<br>
-        {{ form.username(size=32) }}
-    </p>
-    
-    <p>
-      {{ form.acompanante.label(class_="label-weeding") }}<br>
-      {{ form.acompanante() }}
-    </p>
-    
-    <p>{{ form.submit() }}</p>
-</form>
+    <title>Boda Clau Noel</title>
 
-<h1 class="nav-link">Localizacion</h1>
-<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.946213627474!2d-4.1295820168449!3d36.72385298066721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72463d0ad98a87%3A0x8ccff7f2bcb0980c!2sChiringuito+%22El+Hornillero%22!5e0!3m2!1ses!2ses!4v1525770909964" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+    <!-- Bootstrap Core CSS -->
+    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
 
-{% endblock %}
+    <!-- Fonts -->
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href='http://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'/>
+    <link href='http://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'/>
+
+    <!-- Custom Theme CSS -->
+    <link href="css/grayscale.css" rel="stylesheet"/>
+
+</head>
+
+<body id="page-top" data-spy="scroll" data-target=".navbar-custom">
+
+    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+        <div class="container">
+            <div class="navbar-header page-scroll">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+                    <i class="fa fa-bars"></i>
+                </button>
+                <a class="navbar-brand" href="#page-top">
+                    <span class="light">Inicio</span>
+                </a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+                <ul class="nav navbar-nav">
+                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+                    <li class="hidden">
+                        <a href="#page-top"></a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#nosotros">Nosotros</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#cuando">Cuándo</a>
+                    </li>
+                    <li class="page-scroll">
+                        <a href="#donde">Dónde</a>
+                    </li>
+                    <!--
+                    <li class="page-scroll">
+                        <a href="#hoteles">Hoteles</a>
+                    </li>
+                    -->
+                    <li class="page-scroll">
+                        <a href="#confirmar">Confirmar</a>
+                    </li>
+                    <!--
+                    <li class="page-scroll">
+                        <a href="#regalos">Regalos</a>
+                    </li>
+                    -->
+                </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->
+    </nav>
+
+    <section class="intro">
+        <div class="intro-body">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8 col-md-offset-2">
+                        <!--<h1 class="brand-heading">Clau Noel</h1>-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="nosotros" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Nosotros</h2>
+                <p>Somos Claudia y Noel ...</p>
+                <p>Nos conocimos un dia...</p>
+                <div id="slider0_container" style="position: relative; width: 600px; height: 500px; background-color: #000; overflow: hidden; ">
+                   <!-- Slides Container -->
+                   <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 500px; overflow: hidden;">
+                      <div><a u=image><img src="img/nosotros1.jpg"/></a></div>
+                      <div><a u=image><img src="img/nosotros2.jpg"/></a></div>
+                      <div><a u=image><img src="img/nosotros3.jpg"/></a></div>
+                      <div><a u=image><img src="img/nosotros4.jpg"/></a></div>
+                      <div><a u=image><img src="img/nosotros5.jpg"/></a></div>
+                      <div><a u=image><img src="img/nosotros6.jpg"/></a></div>
+                      <div><a u=image><img src="img/nosotros7.jpg"/></a></div>
+                   </div>
+                   <div u="navigator" class="jssorb13" style="position: absolute; bottom: 16px; right: 6px;">
+                      <!-- bullet navigator item prototype -->
+                      <div u="prototype" style="POSITION: absolute; WIDTH: 21px; HEIGHT: 21px;"></div>
+                   </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="cuando" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Cuándo</h2>
+                <p>La celebracion tendra lugar <b>23 de Junio</b> a las <b>21:00</b></p>
+            </div>
+        </div>
+    </section>
+
+    <section id="donde" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Dónde</h2>
+                <p>Increible y magnifico chiringuito <i><a href="http://www.elhornillero.com/">El Hornillero</a></i>, Almayate</p>
+                <div id="slider1_container" style="position: relative; width: 600px; height: 500px; background-color: #000; overflow: hidden; ">
+                   <!-- Slides Container -->
+                   <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 600px; height: 500px; overflow: hidden;">
+                      <div>
+                         <a u=image><img src="img/horni1.jpg" /></a>
+                      </div>
+                      <div>
+                         <a u=image><img src="img/horni2.jpg" /></a>
+                      </div>
+                      <div>
+                         <a u=image><img src="img/horni3.jpg" /></a>
+                      </div>
+                      <div>
+                         <a u=image><img src="img/horni4.jpg" /></a>
+                      </div>
+                      <div>
+                         <a u=image><img src="img/horni5.jpg" /></a>
+                      </div>
+                      <div>
+                         <a u=image><img src="img/horni6.jpg" /></a>
+                      </div>
+                      <div>
+                         <a u=image><img src="img/horni7.jpg" /></a>
+                      </div>
+                      <div>
+                         <a u=image><img src="img/horni8.jpg" /></a>
+                      </div>
+                   </div>
+                   <div u="navigator" class="jssorb13" style="position: absolute; bottom: 16px; right: 6px;">
+                      <!-- bullet navigator item prototype -->
+                      <div u="prototype" style="POSITION: absolute; WIDTH: 21px; HEIGHT: 21px;"></div>
+                   </div>
+                </div>
+                <br/>
+                <h2>En Autobús</h2>
+                <p>Habrá servicio de autobuses gratuito desde Málaga al lugar de la celebración.</p>
+                <h2>En Coche</h2>
+                <p>En google maps el sitio aparece marcado como <i>El Honillero</i>, Explicar carrilillo y aparcamiento</p>
+                <p><iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.946213627474!2d-4.1295820168449!3d36.72385298066721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72463d0ad98a87%3A0x8ccff7f2bcb0980c!2sChiringuito+%22El+Hornillero%22!5e0!3m2!1ses!2ses!4v1525770909964" width="80%" height="450" frameborder="0" style="border:0"></iframe></p>
+            </div>
+        </div>
+    </section>
+<!--
+    <section id="hoteles" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Hoteles</h2>
+
+                <h3>Hotel An Santo Domingo ****</h3>
+                <ul style="text-align: left;">
+                  <li><b>Web:</b> <a href="http://www.hotelansantodomingo.com">Hotel Santo Domingo</a></li>
+                  <li><b>Dirección:</b> Calle Juan Jimenez Cuenca, 16</li>
+                  <li><b>Telefono:</b> 957 511 100</li>
+                  <li><b>Precio:</b> (precio especial: 66€)</li>
+                </ul>
+                <p>El centro de lucena está de obras, para llegar al hotel os recomendamos el siguiente <a href="AN_Santo_Domingo.pdf">itinerario</a>.
+                </p>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3169.1492036543405!2d-4.486413931213379!3d37.40994813877509!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x366de4c9eaffb23e!2sAn+Santo+Domingo!5e0!3m2!1ses!2ses!4v1403468116186" width="80%" height="450" frameborder="0" style="border:0"></iframe>
+                <hr/>
+
+                <h3>Hotel M&M **</h3>
+                <ul style="text-align: left;">
+                  <li><b>Web:</b> <a href="http://www.andalucia.org/es/alojamientos/cordoba/hotel-mm">Hotel M&M</a></li>
+                  <li><b>Dirección:</b> Avenida del Parque, 10</li>
+                  <li><b>Telefono:</b> 957 500 524 / 957 500 571</li>
+                </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3169.185548737922!2d-4.491935000000018!3d37.40908900000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd6d70c6460d3555%3A0x1b0a6f119a672e9b!2sHotel+Baltanas!5e0!3m2!1ses!2ses!4v1403468717096" width="80%" height="450" frameborder="0" style="border:0"></iframe>
+                <hr/>
+
+                <h3>Hotel Los Bronces ****</h3>
+                <ul style="text-align: left;">
+                  <li><b>Web:</b> <a href="http://www.hotellosbronces.com">Hotel Los Bronces</a></li>
+                  <li><b>Dirección:</b> Carretera Córdoba-Málaga, km.74</li>
+                  <li><b>Telefono:</b> 957 516 280</li>
+                </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6339.345138705501!2d-4.501621628714907!3d37.397574997658495!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xd2575083cfcfec29!2sHotel+Los+Bronces!5e0!3m2!1ses!2ses!4v1403469274442" width="80%" height="450" frameborder="0" style="border:0"></iframe>
+                <hr/>
+
+                <h3>Hotel Al-Yussana **</h3>
+                <ul style="text-align: left;">
+                  <li><b>Web:</b> <a href="http://www.hotelalyussana.es">Hotel Al-Yussana</a></li>
+                  <li><b>Dirección:</b> Calle Veracruz, 1</li>
+                  <li><b>Telefono:</b> 957 500 300</li>
+                </ul>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6338.327092899837!2d-4.488725567771305!3d37.40960910038298!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x339ca9bb989b4f5f!2sHOTEL+AL-YUSSANA!5e0!3m2!1ses!2ses!4v1403469238877" width="80%" height="450" frameborder="0" style="border:0"></iframe>
+            </div>
+        </div>
+    </section>
+    -->
+
+    <section id="confirmar" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Confirmar asistencia</h2>
+                <p>Si finalmente podéis acompañarnos en este día tan especial para nosotros, os agradeceríamos que rellenáseis el siguiente formulario:</p>
+                <form class="form-horizontal form-confirmar" action="cgi/send.py" method="post">
+                  <fieldset>
+                  <legend>Confirmar asistencia</legend>
+
+                  <table class="table">
+                     <thead>
+                        <tr>
+                           <th class="text-center" style="width: 70%;">Invitado</th>
+                           <th style="width: 10%;"></th>
+                           <th style="width: 10%;"></th>
+                           <th style="width: 10%;"><button data-duplicate-add="invitado" class="btn btn-default btn-xs" type="button">Añadir invitado</button></th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr data-duplicate="invitado">
+                           <td class="text-center"><input id="nombre" name="nombre" type="text" placeholder="Nombre y apellidos" style="width: 80%;"/></td>
+                           <td class="text-center">
+                             <select id="va" name="va" class="input-xxlarge">
+                                 <option>Sí va</option>
+                                 <option>No va</option>
+                             </select>
+                           </td>
+                           <td class="text-center">
+                             <select id="tipo" name="tipo" class="input-xxlarge">
+                                 <option>Hombre</option>
+                                 <option>Mujer</option>
+                                 <option>Niño</option>
+                             </select>
+                           </td>
+                           <td class="text-center"><button data-duplicate-remove="invitado" class="btn btn-default btn-xs" type="button">Eliminar</button></td>
+                        </tr>
+                        <tr>
+                           <td colspan="4">
+                              <textarea id="consulta" name="consulta" style="width: 80%;" placeholder="Escribe aquí si tienes alguna duda, sugerencia, alergia alimenticia, etc."></textarea>
+                           </td>
+                        </tr>
+                        <tr>
+                           <td colspan="4">
+                              <button id="enviar" name="enviar" class="btn btn-primary">Enviar</button>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+                  
+                  </fieldset>
+               </form>
+            </div>
+        </div>
+    </section>
+
+    <!--
+    <section id="regalos" class="container content-section text-center">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2">
+                <h2>Regalos</h2>
+                <p>Recuerda que tu presencia es nuestro mejor regalo.</p>
+                <p>Aun así, si te apetece ayudarnos a empezar con ilusión una vida juntos puedes poner tu granito de arena en la cuenta de BBVA:
+                    <ul style='list-style: none;'>
+                        <li>Francisco Javier Ríos Pérez</li>
+                        <li>ES74 0182 0483 5502 0159 9892</li>
+                    </ul>
+                </p>
+                <p>Siempre estaremos muy agradecidos por tu regalo.</p>
+            </div>
+        </div>
+    </section>
+    <section id="pie" class="container content-section text-center">
+    </section>
+    -->
+
+    <!-- Core JavaScript Files -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+    <!-- Custom Theme JavaScript -->
+    <script src="js/jquery.duplicate.min.js"></script>
+    <script src="js/grayscale.js"></script>
+
+    <!-- Slides -->
+    <script src="js/jssor.slider.min.js"></script>
+    <script>
+        jQuery(document).ready(function ($) {
+            //Reference http://www.jssor.com/development/slider-with-slideshow.html
+            //Reference http://www.jssor.com/development/tool-slideshow-transition-viewer.html
+
+            var _SlideshowTransitions = [
+            //Fade Twins
+            { $Duration: 700, $Opacity: 2, $Brother: { $Duration: 1000, $Opacity: 2 } },
+            ];
+
+
+            var options = {
+                $FillMode: 1,                                       //[Optional] The way to fill image in slide, 0 stretch, 1 contain (keep aspect ratio and put all inside slide), 2 cover (keep aspect ratio and cover whole slide), 4 actuall size, default value is 0
+                $DragOrientation: 3,                               //[Optional] Orientation to drag slide, 0 no drag, 1 horizental, 2 vertical, 3 either, default value is 1 (Note that the $DragOrientation should be the same as $PlayOrientation when $DisplayPieces is greater than 1, or parking position is not 0)
+                $AutoPlay: true,                                    //[Optional] Whether to auto play, to enable slideshow, this option must be set to true, default value is false
+                $AutoPlayInterval: 2500,                            //[Optional] Interval (in milliseconds) to go for next slide since the previous stopped if the slider is auto playing, default value is 3000
+                $SlideshowOptions: {                                //[Optional] Options to specify and enable slideshow or not
+                    $Class: $JssorSlideshowRunner$,                 //[Required] Class to create instance of slideshow
+                    $Transitions: _SlideshowTransitions,            //[Required] An array of slideshow transitions to play slideshow
+                    $TransitionsOrder: 1,                           //[Optional] The way to choose transition to play slide, 1 Sequence, 0 Random
+                    $ShowLink: true                                    //[Optional] Whether to bring slide link on top of the slider when slideshow is running, default value is false
+                },
+
+                $BulletNavigatorOptions: {                                //[Optional] Options to specify and enable navigator or not
+                    $Class: $JssorBulletNavigator$,                       //[Required] Class to create navigator instance
+                    $ChanceToShow: 2,                               //[Required] 0 Never, 1 Mouse Over, 2 Always
+                    $AutoCenter: 1,                                 //[Optional] Auto center navigator in parent container, 0 None, 1 Horizontal, 2 Vertical, 3 Both, default value is 0
+                    $Steps: 1,                                      //[Optional] Steps to go for each navigation request, default value is 1
+                    $Lanes: 1,                                      //[Optional] Specify lanes to arrange items, default value is 1
+                    $SpacingX: 10,                                  //[Optional] Horizontal space between each item in pixel, default value is 0
+                    $SpacingY: 10,                                  //[Optional] Vertical space between each item in pixel, default value is 0
+                    $Orientation: 1                                 //[Optional] The orientation of the navigator, 1 horizontal, 2 vertical, default value is 1
+                }
+            };
+
+            var jssor_slider0 = new $JssorSlider$("slider0_container", options);
+            var jssor_slider1 = new $JssorSlider$("slider1_container", options);
+
+            //responsive code begin
+            //you can remove responsive code if you don't want the slider scales while window resizes
+            function ScaleSlider() {
+                var parentWidth = jssor_slider1.$Elmt.parentNode.clientWidth;
+                if (parentWidth) {
+                    jssor_slider0.$SetScaleWidth(parentWidth-30);
+                    jssor_slider1.$SetScaleWidth(parentWidth-30);
+                } else {
+                    window.setTimeout(ScaleSlider, 30);
+                }
+            }
+
+            ScaleSlider();
+
+            if (!navigator.userAgent.match(/(iPhone|iPod|iPad|BlackBerry|IEMobile)/)) {
+                $(window).bind('resize', ScaleSlider);
+            }
+
+
+            //if (navigator.userAgent.match(/(iPhone|iPod|iPad)/)) {
+            //    $(window).bind("orientationchange", ScaleSlider);
+            //}
+            //responsive code end
+        });
+    </script>
+
+
+</body>
+
+</html>
