@@ -28,29 +28,33 @@ def flash(message):
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])
 def main():
-  #form = LoginForm()
   
-  
-  #if form.validate_on_submit():
   if request.method == "POST":
     nombre=request.form["nombre"]
     acompanante=request.form["acompanante"]
     ninos=request.form["ninos"]
     consulta=request.form["consulta"]
+    email=request.form["email"]
     
-    print('Confirmada asistencia para Nombre: {}, acompanante: {}, ninos: {}'.format(nombre, acompanante, ninos))
+    print('Confirmada asistencia para Nombre: {}, acompanante: {}, ninos: {}, email: {}'.format(nombre, acompanante, ninos, email))
   
     try:
       # Send mail
       to = config.to
+      
+        
+      
       gmail_user = config.gmail_user 
       gmail_pwd = config.gmail_pwd
       smtpserver = smtplib.SMTP("smtp.gmail.com",587)
       smtpserver.ehlo()
       smtpserver.starttls()
       smtpserver.login(gmail_user, gmail_pwd)
-      header = 'To:' + ", ".join(to) + '\n' + 'From: ' + gmail_user + '\n' +'Subject:[TEST BODA CLAUNOEL - Nueva confirmacion] {} \n'.format(nombre)
+      header = 'To:' + ", ".join(to) + '\n' + 'From: ' + gmail_user + '\n'
+      if email is not None:
+        header=header+'cc: {}\n'.format(email)
       
+      header=header+'Subject:[TEST BODA CLAUNOEL - Nueva confirmacion] {}\n'.format(nombre)
       
       msg = """
                                                              _                             _                            
@@ -61,18 +65,16 @@ def main():
     /'      /'/'    /' /'    /' /'    /'     /'       /' /'    /' /'    /'    /'  //' /'    /' /(___,/' /'        
 (,/' (___,/' (___,/'  (___,/(__(___,/(__    (_____,/'(__(___,/(__(___,/(__(,/'    (_,(___,/'  (________(__        
                                                                                                                   
-      
-  Tenemos nueva confirmacion
-      
-      
-  Ole, ole! Tenemos un nuevo invitado 
-
-  Nombre        : {} 
-  Acompanante   : {}
-  Ninos         : {}
-  
-  Consulta      : {}
-  
+        
+  OLE OLE Y OLE! 
+  Nueva Confirmacion realizada
+ 
+  -------------------------------------------------------
+   Nombre        : {} 
+   Acompanante   : {}
+   Ninos         : {}
+   Consulta      : {}
+  -------------------------------------------------------
   
       
           ---@@@@@@@-------------@@@@@@!**
