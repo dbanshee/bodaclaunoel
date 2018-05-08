@@ -90,7 +90,7 @@
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Cartel</h2>
-                <img src="img/cartel3.jpg" align='center'/>
+                <img src="img/cartel3.jpg" align='center' style="max-width:300px;"/>
             </div>
         </div>
     </section>
@@ -247,24 +247,28 @@
                   <legend>Confirmar asistencia</legend>
 
                   <table class="table">
-                     <thead>
+                     <!--<thead>
                         <tr>
                            <th class="text-center" style="width: 70%;">Invitado</th>
                            <th style="width: 10%;"></th>
                            <th style="width: 10%;"></th>
-                           <!--<th style="width: 10%;"><button data-duplicate-add="invitado" class="btn btn-default btn-xs" type="button">Añadir invitado</button></th>-->
                         </tr>
                      </thead>
+                     -->
                      <tbody>
-                        <tr data-duplicate="invitado">
-                           <td class="text-center"><input id="nombre" name="nombre" type="text" placeholder="Nombre y apellidos" style="width: 80%;"/></td>
-                           <td class="text-center">
+                        <tr data-duplicate="invitado" style="margin: auto;">
+                           <td><input id="nombre" name="nombre" type="text" placeholder="Nombre y apellidos" style="width: 80%;"/></td>
+                        </tr>
+                        <tr data-duplicate="invitado" style="margin: auto;">
+                           <td>
                              <select id="acompanante" name="acompanante" class="input-xxlarge">
                                  <option>Sin Acompanante</option>
                                  <option>Con Acompanante</option>
                              </select>
                            </td>
-                           <td class="text-center">
+                           </tr>
+                          <tr data-duplicate="invitado" style="margin: auto;">
+                           <td>
                              <select id="ninos" name="ninos" class="input-xxlarge">
                                  <option>0 Ninos</option>
                                  <option>1 Ninos</option>
@@ -272,6 +276,7 @@
                                  <option>3 Ninos</option>
                              </select>
                            </td>
+                          </tr>
                            
                            <!--<td class="text-center"><button data-duplicate-remove="invitado" class="btn btn-default btn-xs" type="button">Eliminar</button></td>-->
                         </tr>
