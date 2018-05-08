@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<div align='center'>
+  <img src="{{ url_for('static',filename='img/cartel2.jpg') }}" align='center'/>
+</div>
+
+<h1 class="nav-link">Confirmar Asistencia</h1>
+<form action="" method="post">
+    {{ form.hidden_tag() }}
+    <p>
+        {{ form.username.label(class_="label-weeding") }}<br>
+        {{ form.username(size=32) }}
+    </p>
+    
+    <p>
+      {{ form.acompanante.label(class_="label-weeding") }}<br>
+      {{ form.acompanante() }}
+    </p>
+    
+    <p>{{ form.submit() }}</p>
+</form>
+
+<h1 class="nav-link">Localizacion</h1>
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3197.946213627474!2d-4.1295820168449!3d36.72385298066721!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd72463d0ad98a87%3A0x8ccff7f2bcb0980c!2sChiringuito+%22El+Hornillero%22!5e0!3m2!1ses!2ses!4v1525770909964" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+{% endblock %}
