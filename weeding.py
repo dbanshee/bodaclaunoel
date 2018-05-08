@@ -28,10 +28,17 @@ def flash(message):
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])
 def main():
-  form = LoginForm()
+  #form = LoginForm()
   
-  if form.validate_on_submit():
-    print('Login requested for user {}, acompanante {}, remember_me={}'.format(form.username.data, form.acompanante.data, form.remember_me.data))
+  
+  #if form.validate_on_submit():
+  if request.method == "POST":
+    nombre=request.form["nombre"]
+    acompanante=request.form["acompanante"]
+    ninos=request.form["ninos"]
+    consulta=request.form["consulta"]
+    
+    print('Confirmada asistencia para Nombre: {}, acompanante: {}, ninos: {}'.format(nombre, acompanante, ninos))
   
     try:
       # Send mail
@@ -42,7 +49,7 @@ def main():
       smtpserver.ehlo()
       smtpserver.starttls()
       smtpserver.login(gmail_user, gmail_pwd)
-      header = 'To:' + ", ".join(to) + '\n' + 'From: ' + gmail_user + '\n' +'Subject:[TEST BODA CLAUNOEL - Nueva confirmacion] \n'
+      header = 'To:' + ", ".join(to) + '\n' + 'From: ' + gmail_user + '\n' +'Subject:[TEST BODA CLAUNOEL - Nueva confirmacion] {} \n'.format(nombre)
       
       
       msg = """
@@ -60,9 +67,13 @@ def main():
       
   Ole, ole! Tenemos un nuevo invitado 
 
-  Nombre! : {}. 
-  Trae acompanante: {}.
-      
+  Nombre        : {} 
+  Acompanante   : {}
+  Ninos         : {}
+  
+  Consulta      : {}
+  
+  
       
           ---@@@@@@@-------------@@@@@@!**
     --@@@@!!!!!;;-.;..@------@...............::;!@**
@@ -87,19 +98,22 @@ def main():
     -------------------------.*
 
 
-  """.format(form.username.data, form.acompanante.data)
+  """.format(nombre, acompanante, ninos, consulta)
       
       smtpserver.sendmail(gmail_user, to, header + msg)
       smtpserver.close()
     except:
       print('Error enviando mail')
       traceback.print_exc(file=sys.stdout)
-      return render_template('flash.html', message='Error enviando confirmacion\nPor favor intentelo de nuevo.')
+      #return render_template('flash.html', message='Error enviando confirmacion\nPor favor intentelo de nuevo.')
+      return render_template('index.html')
     
-    msg="Asistencia confimada! Gracias por venir: {}".format(form.username.data)
-    return render_template('flash.html', message=msg)
+    #msg="Asistencia confimada! Gracias por venir: {}".format(form.username.data)
+    #return render_template('flash.html', message=msg)
+    return render_template('index.html')
   
-  return render_template('index.html', form=form)
+  
+  return render_template('index.html')
 
 if __name__ == '__main__':
   app.debug = True

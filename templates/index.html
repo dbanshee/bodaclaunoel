@@ -242,7 +242,7 @@
             <div class="col-lg-8 col-lg-offset-2">
                 <h2>Confirmar asistencia</h2>
                 <!--<p>Si finalmente podéis acompañarnos en este día tan especial para nosotros, os agradeceríamos que rellenáseis el siguiente formulario:</p>-->
-                <form class="form-horizontal form-confirmar" action="cgi/send.py" method="post">
+                <form class="form-horizontal form-confirmar" action="index" method="post">
                   <fieldset>
                   <legend>Confirmar asistencia</legend>
 
@@ -252,26 +252,28 @@
                            <th class="text-center" style="width: 70%;">Invitado</th>
                            <th style="width: 10%;"></th>
                            <th style="width: 10%;"></th>
-                           <th style="width: 10%;"><button data-duplicate-add="invitado" class="btn btn-default btn-xs" type="button">Añadir invitado</button></th>
+                           <!--<th style="width: 10%;"><button data-duplicate-add="invitado" class="btn btn-default btn-xs" type="button">Añadir invitado</button></th>-->
                         </tr>
                      </thead>
                      <tbody>
                         <tr data-duplicate="invitado">
                            <td class="text-center"><input id="nombre" name="nombre" type="text" placeholder="Nombre y apellidos" style="width: 80%;"/></td>
                            <td class="text-center">
-                             <select id="va" name="va" class="input-xxlarge">
-                                 <option>Sí va</option>
-                                 <option>No va</option>
+                             <select id="acompanante" name="acompanante" class="input-xxlarge">
+                                 <option>Sin Acompanante</option>
+                                 <option>Con Acompanante</option>
                              </select>
                            </td>
                            <td class="text-center">
-                             <select id="tipo" name="tipo" class="input-xxlarge">
-                                 <option>Hombre</option>
-                                 <option>Mujer</option>
-                                 <option>Niño</option>
+                             <select id="ninos" name="ninos" class="input-xxlarge">
+                                 <option>0 Ninos</option>
+                                 <option>1 Ninos</option>
+                                 <option>2 Ninos</option>
+                                 <option>3 Ninos</option>
                              </select>
                            </td>
-                           <td class="text-center"><button data-duplicate-remove="invitado" class="btn btn-default btn-xs" type="button">Eliminar</button></td>
+                           
+                           <!--<td class="text-center"><button data-duplicate-remove="invitado" class="btn btn-default btn-xs" type="button">Eliminar</button></td>-->
                         </tr>
                         <tr>
                            <td colspan="4">
