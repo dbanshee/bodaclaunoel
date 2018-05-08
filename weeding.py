@@ -104,4 +104,4 @@ def main():
 if __name__ == '__main__':
   app.debug = True
   app.config['SECRET_KEY'] = 'you-will-never-guess'
-  app.run(host='0.0.0.0',port=8000)
+  app.run(host='0.0.0.0',port=5000)
