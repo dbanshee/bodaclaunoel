@@ -26,10 +26,10 @@ body {
     //background-image: url(https://i.imgur.com/2wZNEaQ.jpg);
     //background-image: url(https://i.imgur.com/XYIB0r2.jpg);
     //background-image: url(https://i.imgur.com/o5FC5Sj.jpg);
-	background-image: url(https://i.imgur.com/CCHqhFh.jpg);
-	
-    
+	background-image: url(https://i.imgur.com/d83Gg1E.jpg);
     background-repeat: repeat;
+	background-attachment: fixed;
+	
 }
 
 html {
