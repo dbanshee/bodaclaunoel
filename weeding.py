@@ -53,7 +53,7 @@ def main():
       smtpserver.login(gmail_user, gmail_pwd)
       header = 'To:' + ", ".join(to) + '\n' + 'From: ' + gmail_user + '\n'
       if email is not None:
-        header=header+'cc: {}\n'.format(email)
+        header=header+'CC: {}\n'.format(email)
       
       header=header+'Subject:[TEST BODA CLAUNOEL - Nueva confirmacion] {}\n'.format(nombre)
       
@@ -76,6 +76,7 @@ def main():
    Ninos         : {}
    Bus           : {}
    Consulta      : {}
+   email         : {}
   -------------------------------------------------------
   
       
@@ -102,9 +103,13 @@ def main():
     -------------------------.*
 
 
-  """.format(nombre, acompanante, ninos, bus, consulta)
+  """.format(nombre, acompanante, ninos, bus, consulta, email)
       
-      smtpserver.sendmail(gmail_user, to, header + msg)
+      toaddrs = to
+      if email is not None:
+        toaddrs = to + [email]
+        
+      smtpserver.sendmail(gmail_user, toaddrs, header + msg)
       smtpserver.close()
     except:
       print('Error enviando mail')

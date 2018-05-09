@@ -2,10 +2,31 @@ body {
     width: 100%;
     height: 100%;
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
-    color: #FFF;
+    /*banshee color letras fondo*/
+    font-weight: bold;
+    color: #000;
     /*background-color: #7a5cdc;*/
     /*palmeras*/
-    background-image: url(https://i.imgur.com/XYIB0r2.jpg);
+    
+    //background-image: url(https://i.imgur.com/zbCw7UN.jpg);
+    //background-image: url(https://i.imgur.com/3qS2kpG.jpg);
+    //background-image: url(https://i.imgur.com/adCh4Rp.jpg);
+    //background-image: url(https://i.imgur.com/yntvGEe.jpg);
+    //background-image: url(https://i.imgur.com/TP0x307.png);
+    //background-image: url(https://i.imgur.com/vvC9yBR.jpg);
+    //background-image: url(https://i.imgur.com/2c67dmH.jpg);
+    //background-image: url(https://i.imgur.com/HtSN8b0.jpg);
+    //background-image: url(https://i.imgur.com/GbeJl7W.jpg);
+    //background-image: url(https://i.imgur.com/Ii7uhRS.jpg);
+    //background-image: url(https://i.imgur.com/ZigVAmX.jpg);
+    //background-image: url(https://i.imgur.com/GCjnYyk.jpg);
+    //background-image: url(https://i.imgur.com/Cw6BtdX.jpg);
+    //background-image: url(https://i.imgur.com/WigyCDD.jpg);
+    //background-image: url(https://i.imgur.com/oNXHwpC.jpg);
+    //background-image: url(https://i.imgur.com/2wZNEaQ.jpg);
+    //background-image: url(https://i.imgur.com/XYIB0r2.jpg);
+    background-image: url(https://i.imgur.com/o5FC5Sj.jpg);
+    
     background-repeat: repeat;
 }
 
@@ -66,7 +87,8 @@ a:focus {
     
     /*banshee navigation bar color*/
     /*background-color: #000;*/
-    background: #3aa36e;
+    /*background: #3aa36e;*/
+    background: #9abf93;
     
 }
 
