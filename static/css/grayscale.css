@@ -4,7 +4,7 @@ body {
     font-family: Lora,"Helvetica Neue",Helvetica,Arial,sans-serif;
     /*banshee color letras fondo*/
     font-weight: bold;
-    color: #000;
+    color: #FFF;
     /*background-color: #7a5cdc;*/
     /*palmeras*/
     
@@ -25,7 +25,9 @@ body {
     //background-image: url(https://i.imgur.com/oNXHwpC.jpg);
     //background-image: url(https://i.imgur.com/2wZNEaQ.jpg);
     //background-image: url(https://i.imgur.com/XYIB0r2.jpg);
-    background-image: url(https://i.imgur.com/o5FC5Sj.jpg);
+    //background-image: url(https://i.imgur.com/o5FC5Sj.jpg);
+	background-image: url(https://i.imgur.com/CCHqhFh.jpg);
+	
     
     background-repeat: repeat;
 }
