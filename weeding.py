@@ -35,8 +35,9 @@ def main():
     ninos=request.form["ninos"]
     consulta=request.form["consulta"]
     email=request.form["email"]
+    bus=request.form["bus"]
     
-    print('Confirmada asistencia para Nombre: {}, acompanante: {}, ninos: {}, email: {}'.format(nombre, acompanante, ninos, email))
+    print('Confirmada asistencia para Nombre: {}, acompanante: {}, ninos: {}, email: {}, bus : {}'.format(nombre, acompanante, ninos, email, bus))
   
     try:
       # Send mail
@@ -73,6 +74,7 @@ def main():
    Nombre        : {} 
    Acompanante   : {}
    Ninos         : {}
+   Bus           : {}
    Consulta      : {}
   -------------------------------------------------------
   
@@ -100,7 +102,7 @@ def main():
     -------------------------.*
 
 
-  """.format(nombre, acompanante, ninos, consulta)
+  """.format(nombre, acompanante, ninos, bus, consulta)
       
       smtpserver.sendmail(gmail_user, to, header + msg)
       smtpserver.close()
