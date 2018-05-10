@@ -182,7 +182,7 @@ def main():
             <br/>
             <br/>
             <br/>
-            Recuerda que tienes toda la información necesaria en 
+            Recuerda que tienes toda la informacion necesaria en 
             <a href="http://claunoel.cyberlove.us/">http://claunoel.cyberlove.us/</a>
             <br/>
             o puedes llamarnos si necesitas cualquier cosa.
