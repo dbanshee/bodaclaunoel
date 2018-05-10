@@ -56,23 +56,7 @@ def main():
       # Send mail
       to = config.to
       
-      if nombre is not None:
-        nombre=str(nombre.encode('ascii', 'replace'))
       
-      if acompanante is not None:
-        acompanante=str(acompanante.encode('ascii', 'replace'))
-        
-      if ninos is not None:
-        ninos=str(ninos.encode('ascii', 'replace'))
-        
-      if consulta is not None:
-        consulta=str(consulta.encode('ascii', 'replace'))
-        
-      if email is not None:
-        email=str(email.encode('ascii', 'replace'))
-        
-      if bus is not None:
-        bus=str(bus.encode('ascii', 'replace'))
         
       
       gmail_user = config.gmail_user 
