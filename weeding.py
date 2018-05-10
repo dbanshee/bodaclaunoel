@@ -11,6 +11,13 @@ import sys, traceback
 #from email.message import EmailMessage
 import config
 
+from email.mime.multipart import MIMEMultipart
+from email.mime.base import MIMEBase
+from email.mime.text import MIMEText
+from email.utils import COMMASPACE, formatdate
+from email.mime.image import MIMEImage
+
+
 class LoginForm(FlaskForm):    
     username = StringField('Invitado')
     acompanante = BooleanField('Acompanante')
@@ -56,6 +63,8 @@ def main():
         header=header+'CC: {}\n'.format(email)
       
       header=header+'Subject:[TEST BODA CLAUNOEL - Nueva confirmacion] {}\n'.format(nombre)
+      
+      
       
       msg = """
                                                              _                             _                            
@@ -108,9 +117,94 @@ def main():
       toaddrs = to
       if email is not None:
         toaddrs = to + [email]
-        
-      smtpserver.sendmail(gmail_user, toaddrs, header + msg)
+      
+      
+      #smtpserver.sendmail(gmail_user, toaddrs, header + msg)
+      #smtpserver.close()
+      
+      
+      outer = MIMEMultipart('related')
+      outer['From'] = gmail_user
+      outer['To'] = ", ".join(toaddrs)
+      outer['CC'] = email
+      outer['Subject'] = '[TEST BODA CLAUNOEL - Nueva confirmacion] {}\n'.format(nombre)
+      
+      #body = MIMEText(msg) # convert the body to a MIME compatible string
+      #outer.attach(body)
+      
+      
+      msgAlternative = MIMEMultipart('alternative')
+      outer.attach(msgAlternative)
+      
+      # We reference the image in the IMG SRC attribute by the ID we give it below
+      
+      
+      htmlMsg="""
+        <html>
+          <body>
+            <img src="cid:image1">
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            <i><b>Invitación Confirmada</b></i>
+            <br/>
+            <br/>
+            Muchas gracias por compartir con nosotros una noche tan especial. 
+            <br/>
+            Esperamos que te diviertas y te contagies de nuestra felicidad y buen ambiente.
+            <br/>
+            <br/>
+            <br/>
+            <b> Nombre :</b> <i>{}</i>
+            <br/>
+            <b> Acompanante :</b>  <i>{}</i>
+            <br/>
+            <b> Ninos :</b> <i>{}</i>
+            <br/>
+            <b> Bus :</b> <i>{}</i>
+            <br/>
+            <b> Consulta :</b> <i>{}</i>
+            <br/>
+            <b> email :</b> <i>{}</i>
+            <br/>
+            <br/>
+            <br/>
+            <i>Nos vemos el dia <b>23 de Junio</b> a las <b>21:00</b> en <a href="https://goo.gl/maps/dv7HdHYoKaN2"><b>El Hornillero</b></i></a>
+            <br/>
+            <br/>
+            <br/>
+            <br/>
+            Recuerda que tienes toda la información necesaria en 
+            <a href="http://claunoel.cyberlove.us/">http://claunoel.cyberlove.us/</a>
+            <br/>
+            o puedes llamarnos si necesitas cualquier cosa.
+            <br/>
+            <br/>
+            <i>Claudia :</i> <a href="tel:644-340-248"><b>644340248</b></a>
+            <br/>
+            <i>Oscar Noel :</i> <a href="tel:665-144-704"><b>665144704</b></a>
+            <br/>
+          <body>
+        <html>
+        """.format(nombre, acompanante, ninos, bus, consulta, email)
+      
+      
+      msgText = MIMEText(htmlMsg, 'html')
+      msgAlternative.attach(msgText)
+      
+      # This example assumes the image is in the current directory
+      fp = open('static/img/intro-bg.jpg', 'rb')
+      msgImage = MIMEImage(fp.read())
+      fp.close()
+      msgImage.add_header('Content-ID', '<image1>')
+      msgImage.add_header('Content-Disposition', 'inline', filename='intro-bg.jpg')
+      outer.attach(msgImage)
+      
+      composed = outer.as_string()
+      smtpserver.sendmail(gmail_user, toaddrs, composed)
       smtpserver.close()
+      
     except:
       print('Error enviando mail')
       traceback.print_exc(file=sys.stdout)
