@@ -127,7 +127,7 @@ def main():
       outer['From'] = gmail_user
       outer['To'] = ", ".join(toaddrs)
       outer['CC'] = email
-      outer['Subject'] = '[TEST BODA CLAUNOEL - Nueva confirmacion] {}\n'.format(nombre)
+      outer['Subject'] = '[BODA CLAUNOEL - Invitacion Confirmada] {}\n'.format(nombre)
       
       #body = MIMEText(msg) # convert the body to a MIME compatible string
       #outer.attach(body)
