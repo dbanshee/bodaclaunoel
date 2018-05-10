@@ -62,7 +62,7 @@ def main():
       if email is not None:
         header=header+'CC: {}\n'.format(email)
       
-      header=header+'Subject:[TEST BODA CLAUNOEL - Nueva confirmacion] {}\n'.format(nombre)
+      header=header+'Subject:[BODA CLAUNOEL - Invitacion Confirmada] {}\n'.format(nombre)
       
       
       
