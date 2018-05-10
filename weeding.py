@@ -134,7 +134,7 @@ def main():
       outer['From'] = gmail_user
       outer['To'] = ", ".join(toaddrs)
       outer['CC'] = email
-      outer['Subject'] = '[BODA CLAUNOEL - Invitacion Confirmada] {}\n'.format(nombre)
+      outer['Subject'] = u'[BODA CLAUNOEL - Invitacion Confirmada] {}\n'.format(nombre)
       
       #body = MIMEText(msg) # convert the body to a MIME compatible string
       #outer.attach(body)
@@ -146,7 +146,7 @@ def main():
       # We reference the image in the IMG SRC attribute by the ID we give it below
       
       
-      htmlMsg="""
+      htmlMsg=u"""
         <html>
           <body>
             <img src="cid:image1">
