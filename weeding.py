@@ -10,6 +10,10 @@ import smtplib
 import sys, traceback
 #from email.message import EmailMessage
 import config
+import sys
+reload(sys)
+sys.setdefaultencoding('utf8')
+
 
 from email.mime.multipart import MIMEMultipart
 from email.mime.base import MIMEBase
@@ -238,6 +242,8 @@ def main():
   return render_template('index.html')
 
 if __name__ == '__main__':
+  
+  sys.setdefaultencoding('utf8')
   app.debug = True
   app.config['SECRET_KEY'] = 'you-will-never-guess'
   app.run(host='0.0.0.0',port=5000)
