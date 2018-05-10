@@ -139,7 +139,7 @@ def main():
       # We reference the image in the IMG SRC attribute by the ID we give it below
       
       
-      htmlMsg="""
+      htmlMsg=u"""
         <html>
           <body>
             <img src="cid:image1">
