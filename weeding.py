@@ -53,7 +53,7 @@ def main():
       to = config.to
       
       if nombre is not None:
-      nombre=str(nombre.encode('utf-8').decode('ascii', 'replace'))
+        nombre=str(nombre.encode('utf-8').decode('ascii', 'replace'))
       
       if acompanante is not None:
         acompanante=str(acompanante.encode('ascii', 'replace'))
