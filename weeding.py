@@ -228,6 +228,6 @@ def main():
 if __name__ == '__main__':
   
   sys.setdefaultencoding('utf8')
-  app.debug = True
+  app.debug = False
   app.config['SECRET_KEY'] = 'you-will-never-guess'
   app.run(host='0.0.0.0',port=5000)
