@@ -9,7 +9,7 @@ from wtforms.validators import DataRequired
 import smtplib
 import sys, traceback
 #from email.message import EmailMessage
-import config
+from config import Config
 import sys
 reload(sys)
 sys.setdefaultencoding('utf8')
@@ -29,7 +29,7 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Confirmar')
 
 app = Flask(__name__,static_url_path='')
-
+config = Config('weeding.cfg')
 
 @app.route('/flash')
 def flash(message):
@@ -39,7 +39,7 @@ def flash(message):
 @app.route('/index', methods=['GET', 'POST'])
 @app.route('/', methods=['GET', 'POST'])
 def main():
-  
+
   if request.method == "POST":
     nombre=request.form["nombre"]
     acompanante=request.form["acompanante"]
@@ -226,7 +226,7 @@ def main():
   return render_template('index.html')
 
 if __name__ == '__main__':
-  
+
   sys.setdefaultencoding('utf8')
   app.debug = False
   app.config['SECRET_KEY'] = 'you-will-never-guess'
