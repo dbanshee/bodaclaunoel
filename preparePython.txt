@@ -1,0 +1,4 @@
+sudo apt-get install python-pip
+sudo pip install flask
+sudo pip install flask_wtf
+sudo pip install config
