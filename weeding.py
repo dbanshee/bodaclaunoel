@@ -1,6 +1,7 @@
 #! /usr/bin/python
 # -*- coding: utf-8 -*-
 
+import time
 import os,stat
 from flask import Flask,render_template,request,abort,redirect,url_for
 from flask_wtf import FlaskForm
@@ -28,8 +29,11 @@ class LoginForm(FlaskForm):
     remember_me = BooleanField('Remember Me')
     submit = SubmitField('Confirmar')
 
+
+appDir=os.path.dirname(__file__)
+
 app = Flask(__name__,static_url_path='')
-config = Config('weeding.cfg')
+config = Config(os.path.join(appDir, 'weeding.cfg'))
 
 @app.route('/flash')
 def flash(message):

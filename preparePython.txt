@@ -2,3 +2,10 @@ sudo apt-get install python-pip
 sudo pip install flask
 sudo pip install flask_wtf
 sudo pip install config
+
+# With Apache mod_wsgi
+
+sudo apt-get install libapache2-mod-wsgi-py python-dev
+
+
+sudo a2ensite /etc/apache2/sites-available/weeding.conf
